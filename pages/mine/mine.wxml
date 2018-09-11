@@ -1,0 +1,43 @@
+<image src="{{background}}" mode='aspectFill' style='position:fixed;z-index:-1;height:100%;width:100%;'></image>
+
+<view class="container">
+  <view style='position:fixed;margin:15rpx'>
+    <navigator url="../set/set" hover-class='none' style="padding-right:0">
+      <image class="weui-media-box__hd weui-media-box__hd_in-appmsg" src="../../lib/img/icon-set.png" mode='aspectFit' style='height:60rpx;width:60rpx'></image>
+    </navigator>
+  </view>
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+
+    <view class='infogroup'>
+      <text class="nickname">{{userInfo.nickName}}</text>
+      <view class="divLine"></view>
+      <navigator class='signin' hover="true" hover-class="signin-hover" url="../calendar/calendar"><view class='iconfont icon-rili:before'></view> 打卡日历</navigator>
+    </view>
+
+    <view class='funcgroup'>
+      <view class='func'>收到赞
+      </view>
+      <view class='func'>粉丝数
+      </view>
+      <view class='func'>积分
+      </view>
+      <view class='func'>关注
+      </view>
+    </view>
+  </view>
+  <view style='margin-top:480rpx'>
+    <view wx:for="{{list}}" wx:key="{{index}}">
+      <view wx:if="{{list}}" class="card">
+        <image wx:if="{{item.com==1}}" src="../../lib/img/com.png" style="height:100rpx;width:80rpx"></image>
+        <view class="countDown" wx:if="{{item.com==0}}">倒计时:{{item.countDown}}</view>
+        <view class="section">{{item.section}}</view>
+        <button class="btn" wx:if="{{item.com==0 && item.countDown !=='0天0小时'}}" bindtap='com' data-id="{{item.id}}">完成了</button>
+      </view>
+
+    </view>
+    <view wx:if="{{!list}}" class="none">
+      <text>还没有小目标呢，快去设立目标吧</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/follow/follow.wxml-->
+ <view wx:for="{{list}}" wx:for-index="lbl">
+          <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
+          <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
+          <view class="section se{{lbl%5}}">
+            <image wx:if="{{item.com==1}}" src="../../lib/img/scom.png" style="right:65rpx;position:absolute;height:75rpx;width:75rpx"></image>
+            <text style='line-height: 35px;'>{{item.section}}</text>
+            <view wx:if="{{item.nick!=null}}" style='position:relative;margin:5%;color:#AAAAAA'>
+              <text style='font-size:medium'>\n——{{item.nick}}</text>
+            </view>
+</view>
+</view>

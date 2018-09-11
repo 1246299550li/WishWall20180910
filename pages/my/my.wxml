@@ -1,0 +1,38 @@
+<!--pages/my/my.wxml-->
+<image src="{{background}}"  mode='aspectFill' style='position:fixed;width:100%;height:100%;'></image>
+<view style='position:absolute'>
+<navigator url="set" hover-class='none' style="padding-right:0;background-color:">
+  <image class="weui-media-box__hd weui-media-box__hd_in-appmsg" src="../../lib/img/icon-set.png"
+				       mode='aspectFit' style='height:60rpx;width:60rpx'></image>
+</navigator>
+</view>
+<view class="container">
+  <view class="userinfo">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+
+<view class='tui-countdown-content' wx:for="{{countDownList}}" wx:key="countDownList">
+  <text>离学期结束还有\n</text>
+  <text class='tui-conutdown-box'>{{item.day}}</text>天
+  <text class='tui-conutdown-box'>{{item.hou}}</text>时
+  <text>\n</text>
+  <text class='tui-conutdown-box'>{{item.min}}</text>分
+  <text class='tui-conutdown-box tui-countdown-bg'>{{item.sec}}</text>秒
+</view>
+
+ <!--心愿展示部分-->
+<view style="margin-top:200rpx;">
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view wx:if="{{list}}" class="weui-panel__bd card" style='opacity:0.5;background-color:white;margin:80rpx 35rpx auto 35rpx;border-radius:30rpx;'>
+      <image wx:if="{{item.com==1}}" src="../../lib/img/com.png" style="height:100rpx;width:100rpx"></image>
+      <view style="word-break:break-all;padding-left:20rpx;padding-top:20rpx;">{{item.section}}</view>
+      <view style='text-align:right;font-family:华文行楷;padding-right:30rpx;padding-top:30rpx;'>我的心愿</view>
+      <view style='text-align:right;font-family:华文行楷;padding-right:30rpx;'>my wish</view>
+      <button wx:if="{{item.com==0}}" bindtap='com' data-id="{{item.id}}">确定完成</button>
+    </view>
+    <view wx:else class="none">
+      <text>还没有心愿呢，快去许愿吧</text>
+    </view>
+  </view>
+</view>

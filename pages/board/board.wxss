@@ -1,0 +1,35 @@
+.content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+textarea {
+  top: 48%;
+  left: 16%;
+  position: fixed;
+  width: 72%;
+  height: 6em;
+  padding: 6rpx;
+  color: white;
+}
+
+.next-btu {
+  border: 2px solid black;
+  margin: 10rpx;
+  border-radius: 50rpx;
+}
+
+.section{
+  background-image: url("https://xyq.54sher.com/img/count.png");
+  width:90%;
+  background-repeat:no-repeat;
+  background-size:90% 100%;
+  -moz-background-size:100% 100%;
+  padding: 18rpx;
+  position: absolute;
+  top: 82%;
+  text-align: center;
+  font-family: fantasy;
+  font-size: larger;
+}

@@ -1,0 +1,69 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100rpx 0;
+  box-sizing: border-box;
+}
+
+.weui-media-box__desc{
+  margin:80rpx;
+  padding:100rpx;
+}
+
+.userinfo button{
+  width:300rpx;
+  height:100rpx;
+  border-radius:36rpx;
+  background-color: rgba(255, 255, 255, 0.4);
+  border:8rpx solid rgba(52,52,52,0.83);
+ font-size: 45rpx;
+ line-height: 90rpx;
+}
+
+.userinfo{
+  margin: 0 auto;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.527);  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);  
+  position:absolute;
+}
+
+.none{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  color: rgb(225, 225, 225)
+}
+
+.tui-countdown-content{
+  position: absolute;
+  height: 50px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 15px;
+  padding: 0 15px;
+  font-size: 15px;
+}
+
+.tui-conutdown-box{
+  display: inline-block;
+  height: 24px;
+  width: 36px;
+  line-height: 26px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 0 5px;
+}
+
+.tui-countdown-bg{
+  background-color: #DF0101;
+}

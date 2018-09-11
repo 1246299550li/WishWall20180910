@@ -1,0 +1,67 @@
+/* pages/shows/shows.wxss */
+.scroll{
+  position: absolute;
+  height: 64%;
+  width: 80%;
+  left: 10%;
+  top: 23%;
+}
+
+.userinfo{
+  margin-left: 5%;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position:absolute;
+}
+
+.section{
+  margin-left: 120rpx;
+  margin-top: 50rpx;
+  border-radius: 15rpx;
+  word-wrap: break-word;
+  width:70%;
+}
+
+.se0{
+  background-color: rgb(136, 84, 63);
+}
+
+.se1{
+  background-color: rgb(146, 126, 73);
+}
+
+.se2{
+  background-color: rgb(97, 101, 136);
+}
+
+.se3{
+  background-color: rgb(68, 121, 135);
+}
+
+.se4{
+  background-color: rgb(114, 124, 74);
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+.box_list{
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+.box-image{
+    height: 84rpx;
+    width: 84rpx;
+    margin-bottom: 10rpx;
+}

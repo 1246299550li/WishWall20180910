@@ -1,0 +1,38 @@
+/* pages/follow/follow.wxss */
+.userinfo{
+  margin-left: 3%;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position:absolute;
+}
+.section{
+  margin-left: 120rpx;
+  margin-top: 50rpx;
+  border-radius: 15rpx;
+  word-wrap: break-word;
+  width:70%;
+}
+
+.se0{
+  background-color: rgb(136, 84, 63);
+}
+
+.se1{
+  background-color: rgb(146, 126, 73);
+}
+
+.se2{
+  background-color: rgb(97, 101, 136);
+}
+
+.se3{
+  background-color: rgb(68, 121, 135);
+}
+
+.se4{
+  background-color: rgb(114, 124, 74);
+}
