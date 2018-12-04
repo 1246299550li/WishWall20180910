@@ -1,0 +1,147 @@
+.color-red {
+    color: red;
+}
+
+.color-gray {
+    color: gray;
+}
+
+.color-sign {
+    background-color: #49b5f6;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.cur-date {
+    text-decoration: underline;
+}
+
+.curdate-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+    width: 100%;
+}
+
+.curdate-block button {
+    margin: 0px 30px;
+    background-color: #49b5f6;
+    color: #fff;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.calendar-block {
+    margin-top: 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 5px;
+}
+
+.calendar-day {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    margin-right: 5px;
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sign-btn {
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #49b5f6;
+    color: #fff;
+    letter-spacing: 5px;
+    padding: 0px;
+}
+
+.bedge {
+    background-color: skyblue;
+    padding: 10rpx;
+}
+
+.bedge-box {
+    position: absolute;
+    right: 8vw;
+    bottom: 8vw;
+}
+
+/* 模态框css */
+
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    overflow: hidden;
+    z-index: 900;
+    color: #fff;
+}
+
+.modal-dialog {
+    width: 450rpx;
+    /* overflow: hidden; */
+    position: fixed;
+    top: 32%;
+    left: 150rpx;
+    border-radius: 25rpx;
+    background-color: white;
+    z-index: 999;
+}
+
+.modal-img {
+    position: absolute;
+    z-index: -9;
+    height: 400rpx;
+    width: 500rpx;
+    top: -30rpx;
+    left: -32rpx;
+}
+
+.modal-title {
+    padding: 10rpx 0 20rpx;
+    font-size: 38rpx;
+    color: black;
+    text-align: center;
+}
+
+.modal-content {
+    padding: 28rpx 28rpx;
+    height: 250rpx;
+    font-size: 35rpx;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    height: 80rpx;
+    /* border-top: 1px solid #49b5f6; */
+    font-size: 38rpx;
+    line-height: 80rpx;
+}
+
+.btn-cancel {
+    /* margin: 0 auto; */
+    width: 50%;
+    color: #666;
+    text-align: center;
+    border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+    margin: 0 auto;
+    width: 50%;
+    color: black;
+    text-align: center;
+}

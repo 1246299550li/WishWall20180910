@@ -1,0 +1,82 @@
+/* pages/shows/shows.wxss */
+.back{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.userinfo {
+    margin-left: 3%;
+    margin-top:2%; 
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.section {
+    margin-left: 55rpx;
+    margin-top: 40rpx;
+    border-radius: 50rpx;
+    word-wrap: break-word;
+    width: 85%;
+    padding: 10rpx;
+}
+
+
+.se0 {
+    background-color: rgb(246, 211, 218);
+}
+
+.se1 {
+    background-color: rgb(254, 216, 177);
+}
+
+.se2 {
+    background-color: rgb(252, 216, 202);
+}
+
+.se3 {
+    background-color: rgb(197, 239, 229);
+}
+
+.se4 {
+    background-color: rgb(192, 211, 207);
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+
+.box_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20rpx;
+}
+
+.box-up {
+    display: flex;
+    color: rgb(73, 67, 52);
+    margin-top: -8rpx;
+    margin-left: 10rpx;
+}
+
+.up-num {
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+}
+
+.box-image {
+    height: 60rpx;
+    width: 60rpx;
+    margin-bottom: 10rpx;
+}

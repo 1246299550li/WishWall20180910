@@ -1,0 +1,53 @@
+<view class="containers">
+
+    <!--当前日期-->
+    <view class="curdate-block">
+        <button bindtap='preMonth'>{{preMonth}}</button>
+        <text> {{year}}年{{month}}月</text>
+        <button bindtap='nextMonth'>{{nextMonth}}</button>
+
+    </view>
+
+    <!-- 星期-->
+    <view class="calendar-block">
+        <view class="calendar-day {{(item == '日' || item == '六')?'color-red':'color-gray'}}" wx:for="{{days}}" wx:key="key" wx:item="item" wx:for-index="index">{{item}}</view>
+    </view>
+
+    <!-- 日历-->
+    <view class="calendar-block">
+        <view class="calendar-day {{item.disabled?'color-gray':''}}  {{item.sign?'color-sign':''}}" wx:for="{{calendars}}" wx:key="key" wx:item="item" wx:for-index="index">{{item.date}}</view>
+    </view>
+
+    <!-- 签到 -->
+    <view class="center-container">
+        <button wx:if="{{showSign}}" class="sign-btn" bindtap='doSign'>打卡</button>
+    </view>
+    <!-- 返回按钮 -->
+    <view style='position:fixed;bottom:25rpx'>
+        <navigator url="../mine/mine" bindtap='nav' hover-class='none' style="padding-right:0">
+            <image class="weui-media-box__hd weui-media-box__hd_in-appmsg" src="../../lib/img/icon-return.png" mode='aspectFit' style='height:65rpx;width:65rpx'></image>
+            <text style='font-size:small'>返回</text>
+        </navigator>
+    </view>
+    <!-- 徽章 -->
+    <navigator class='bedge-box' url="../bedge/bedge">
+        <view class='bedge'>
+            <view>徽章墙</view>
+        </view>
+    </navigator>
+</view>
+
+<!-- 模态框 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}" bindtap="onConfirm">
+    <image class="modal-img" src="{{url}}" mode="widthFix"></image>
+    <view class="modal-title">恭喜你!获得徽章</view>
+    <view class="modal-content">
+
+    </view>
+    <view class="modal-footer">
+        <text class="modal-text">{{tip}}</text>
+        <!-- <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view> -->
+        <!-- <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">知道了</view> -->
+    </view>
+</view>

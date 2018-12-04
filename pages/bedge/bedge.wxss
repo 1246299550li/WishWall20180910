@@ -1,0 +1,27 @@
+/* pages/bedge.wxss */
+
+.container {
+    width: 92vw;
+    margin-left: 4vw;
+    margin-top: 10%;
+    /* background-color: greenyellow; */
+}
+
+.avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 3vw;
+}
+
+.nickname {
+    
+    color: rgb(179, 211, 188);
+    font-size: large;
+}
+.userinfo {
+    margin-top: 4vw;
+    padding-left: 5vw;
+    display: flex;
+    align-items: center;
+}

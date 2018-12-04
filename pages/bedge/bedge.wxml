@@ -1,0 +1,8 @@
+<!--pages/bedge.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <image class="avatar" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="nickname">{{userInfo.nickName}}</text>
+    </view>
+<view class='bedge'></view>
+</view>
