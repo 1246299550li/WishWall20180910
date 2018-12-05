@@ -9,9 +9,9 @@ Page({
      */
     data: {
         bedgeList: [
-            "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/badge/%E7%8B%AC%E6%8F%BD%E8%8B%8D%E7%A9%B9.jpg",
-            "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/badge/%E5%88%9D%E9%9C%B2%E9%94%8B%E8%8A%92.jpg",
-            "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/badge/%E5%8A%BF%E5%A6%82%E7%A0%B4%E7%AB%B9.jpg?tdsourcetag=s_pctim_aiomsg"
+            "../../lib/img/bedge/1.jpg",
+            "../../lib/img/bedge/7.jpg",
+            "../../lib/img/bedge/21.jpg"
         ]
 
     },
