@@ -13,8 +13,8 @@ Page({
         tip: '',
         showModal: false,
         url: '',
-        showSign: false
-
+        showSign: false,
+        bedgeUrl:'../../lib/img/bedge.png'
     },
 
     /**

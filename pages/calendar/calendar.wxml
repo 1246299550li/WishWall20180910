@@ -31,7 +31,9 @@
     </view>
     <!-- 徽章 -->
     <navigator class='bedge-box' url="../bedge/bedge">
+    <image class="bedge-icon" src="{{bedgeUrl}}" mode="cover"></image>
         <view class='bedge'>
+
             <view>徽章墙</view>
         </view>
     </navigator>

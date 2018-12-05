@@ -25,50 +25,54 @@
 }
 
 .curdate-block button {
-    margin: 0px 30px;
+    margin: 0rpx 60rpx;
     background-color: #49b5f6;
     color: #fff;
-    width: 50px;
-    height: 30px;
-    line-height: 30px;
+    width: 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
 }
 
 .calendar-block {
-    margin-top: 10px;
-    width: 350px;
+    margin-top: 20rpx;
+    width: 700rpx;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 5px;
+    padding-left: 10rpx;
 }
 
 .calendar-day {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    margin-right: 5px;
+    width: 90rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-right: 10rpx;
     margin-top: 20rpx;
     text-align: center;
-    font-size: 18px;
+    font-size: 36rpx;
 }
 
 .sign-btn {
-    margin-top: 20px;
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
+    margin-top: 40rpx;
+    width: 200rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     background-color: #49b5f6;
     color: #fff;
-    letter-spacing: 5px;
-    padding: 0px;
+    letter-spacing: 10rpx;
+    padding: 0;
 }
 
 .bedge {
-    background-color: skyblue;
-    padding: 10rpx;
+    /* background-color: skyblue; */
 }
-
+.bedge-icon{
+    margin-left: 2rpx;
+    height: 100rpx;
+    width: 100rpx;
+}
 .bedge-box {
+    font-size: 35rpx;
     position: absolute;
     right: 8vw;
     bottom: 8vw;
