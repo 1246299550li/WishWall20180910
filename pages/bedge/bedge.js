@@ -8,11 +8,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        bedgeList: [
-            "../../lib/img/bedge/1.jpg",
-            "../../lib/img/bedge/7.jpg",
-            "../../lib/img/bedge/21.jpg"
-        ]
+        ret: "<",
+        bedgeList: []
 
     },
 
@@ -59,35 +56,73 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
+        let that = this;
+        wx.request({
+            url: WEB_ROOT + 'showDates.php',
+            data: {
+                openid: app.globalData.openid,
+                ch: 3
+            },
+            method: 'POST',
+            header: {
+                'content-type': 'application/x-www-form-urlencoded' // POST默认值
+            },
+            success: res => {
+                let tmp = res.data[0];
+                console.log("连续签到天数");
+                console.log(tmp);
+                if (tmp > 0 && tmp < 7) {
+                    that.setData({
+                        bedgeList: [
+                            "../../lib/img/bedge/1.jpg"
+                        ]
+                    })
+                } else if (tmp < 14) {
+                    that.setData({
+                        bedgeList: [
+                            "../../lib/img/bedge/1.jpg",
+                            "../../lib/img/bedge/7.jpg"
+                        ]
+                    })
+                } else if (tmp < 21) {
+                    that.setData({
+                        bedgeList: [
+                            "../../lib/img/bedge/1.jpg",
+                            "../../lib/img/bedge/7.jpg",
+                            "../../lib/img/bedge/14.jpg"
+                        ]
+                    })
+                } else if (tmp < 30) {
+                    that.setData({
+                        bedgeList: [
+                            "../../lib/img/bedge/1.jpg",
+                            "../../lib/img/bedge/7.jpg",
+                            "../../lib/img/bedge/14.jpg",
+                            "../../lib/img/bedge/21.jpg"
+                        ]
+                    })
+                } else if (tmp >= 30) {
+                    that.setData({
+                        bedgeList: [
+                            "../../lib/img/bedge/1.jpg",
+                            "../../lib/img/bedge/7.jpg",
+                            "../../lib/img/bedge/14.jpg",
+                            "../../lib/img/bedge/21.jpg",
+                            "../../lib/img/bedge/30.jpg"
+                        ]
+                    })
+                }
+            },
+            fail: res => {
+                console.log(res);
+            }
+        });
 
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
+    ret() {
+        wx.navigateTo({
+            url: '../calendar/calendar'
+        })
     },
 
     /**

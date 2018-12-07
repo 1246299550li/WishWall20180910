@@ -1,5 +1,6 @@
 <!--pages/bedge.wxml-->
 <view class="container">
+<view class='ret' bindtap="ret">{{ret}}</view>
     <view class='title'>徽章墙</view>
     <view class="userinfo">
         <image class="avatar" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>

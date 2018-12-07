@@ -221,14 +221,14 @@ Page({
     wx.showToast({
       title: '请提交证明材料',
       icon: 'loading',
-      duration: 2000,
+      duration: 1300,
     });
     app.globalData.nowactid = id;
     setTimeout(function() {
       wx.navigateTo({
         url: '../upload/upload'
       })
-    }, 2000)
+    }, 1300)
   },
   onShareAppMessage: function() {
     return {

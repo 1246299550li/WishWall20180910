@@ -7,6 +7,13 @@
     /* background-color: greenyellow; */
 }
 
+.ret {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: 50rpx;
+}
+
 .title {
     text-align: center;
     font-size: 40rpx;
