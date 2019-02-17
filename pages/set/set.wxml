@@ -1,0 +1,28 @@
+<view class="container">
+<view class='ret' bindtap="ret">{{ret}}</view>
+  <view class='group'>
+    <view class='nameTitle'>姓名</view>
+    <input class='create-title' placeholder="请输入姓名" bindinput="nameTitle"></input>
+  </view>
+  <view class='group'>
+    <view class='studentId'>学号</view>
+    <input class='create-title' placeholder="请输入学号" bindinput="collegeTitle"></input>
+  </view>
+  <view class='group'>
+    <view class='studentId'>邀请人学号</view>
+    <input class='create-title' placeholder="（选填）" bindinput="invitationTitle"></input>
+  </view>
+ <!-- <view class='group'>
+    <view class='sex'>性别</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for-items="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>-->
+  <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">确定</button>
+
+  <view class="footer">
+    <view class="footer__text">Copyright © 2018 升华工作室</view>
+  </view>
+</view>

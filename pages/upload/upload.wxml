@@ -1,0 +1,28 @@
+<!--pages/upload/upload.wxml-->
+<image src="{{background}}" mode='aspectFill' mode="widthFix" style='position:fixed;z-index:-1;width:100vh;height:100vh;'></image>
+<view class='container'>
+
+    <view class='title'>
+        <image class='sub' src="../../lib/img/sub.png"></image>
+    </view>
+    <view class="big-logos">
+        <view class='logoinfo'>
+            <image class='add' bindtap="upimg" src='../../lib/img/add.png'></image>
+        </view>
+        <block wx:for="{{img_arr}}">
+            <view class='logoinfo'>
+                <image class='logo' src='{{item}}'></image>
+            </view>
+        </block>
+    </view>
+    <view class='btns'>
+    <image class='btn' bindtap='submit' src="../../lib/img/subbtn.png"></image>
+    </view>
+    
+</view>
+<view style='position:fixed;bottom:25rpx'>
+    <navigator url="../mine/mine" bindtap='nav' hover-class='none' style="padding-right:0">
+        <image class="weui-media-box__hd weui-media-box__hd_in-appmsg" src="../../lib/img/icon-return.png" mode='aspectFit' style='height:65rpx;width:65rpx'></image>
+        <text style='font-size:small'>返回</text>
+    </navigator>
+</view>

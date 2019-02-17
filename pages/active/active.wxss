@@ -1,0 +1,83 @@
+/* pages/active/active.wxss */
+
+/**index.wxss**/
+
+.container {
+    position: absolute;
+    width: 88vw;
+    margin-left: 6vw;
+    margin-top: 10%;
+    /* background-color: rgba(210, 146, 34, 0.2); */
+}
+
+.card {
+    position: relative;
+    width: 90%;
+    background-color: rgba(246, 246, 246, 0.95);
+    padding: 30rpx;
+    border-radius: 1rpx;
+    margin-bottom: 150rpx;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.num {
+    width: 100%;
+    color: gray;
+    text-align: right;
+    /* margin-right: 20rpx; */
+}
+
+.section {
+    width: 90%;
+    word-break: break-all;
+    margin: 15rpx auto;
+    font-size: 40rpx;
+}
+
+.group {
+    margin-top: 50rpx;
+    display: flex;
+}
+
+.countDown {
+    width: 64%;
+    color: rgb(104, 110, 108);
+    height: 68rpx;
+    line-height: 68rpx;
+}
+
+.btn {
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: rgba(192, 211, 207, 0);
+    border-radius: 0rpx;
+    border-top: 4px solid rgba(159, 191, 188, 1);
+    border-bottom: 4px solid rgba(159, 191, 188, 1);
+    width: 35%;
+    text-align: center;
+}
+
+.prize-box {
+  font-size: 35rpx;
+  position: fixed;
+  right: 8vw;
+  bottom: 8vw;
+  text-align: center;
+}
+
+.prize-icon {
+  margin-left: 2rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.prize-text{
+  color:rgb(225, 97, 116);
+}
+
+.none {
+    width: 100%;
+    margin-top: 40%;
+    text-align: center;
+    position: absolute;
+    color: rgb(126, 117, 117);
+}

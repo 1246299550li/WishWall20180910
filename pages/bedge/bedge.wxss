@@ -1,0 +1,51 @@
+/* pages/bedge.wxss */
+
+.container {
+  width: 92vw;
+  margin-left: 4vw;
+  margin-top: 10%;
+  /* background-color: greenyellow; */
+}
+
+.ret {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  font-size: 30rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 3vw;
+}
+
+.nickname {
+  color: rgb(179, 211, 188);
+  font-size: large;
+}
+
+.userinfo {
+  margin: 4vw 0 5vw;
+  padding-left: 5vw;
+  display: flex;
+  align-items: center;
+}
+
+.bedge-box {
+  border-top: 2rpx solid gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bedge {
+  height: 300rpx;
+  width: 300rpx;
+}

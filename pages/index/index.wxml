@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<image src="{{background}}" mode='aspectFill' mode="widthFix" style='position:fixed;z-index:-1;width:100%;'></image>
+
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

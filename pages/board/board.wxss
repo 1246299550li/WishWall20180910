@@ -1,0 +1,24 @@
+.content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+textarea {
+  top: 35%;
+  left: 5%;
+  position: fixed;
+  width: 72%;
+  height: 6em;
+  padding: 6rpx;
+  color: black;
+  font-size: 50rpx;
+}
+
+.none {
+    width: 100%;
+    margin-left: 2%;
+    bottom: 3%;
+    position: fixed;
+    color: rgb(126, 117, 117);
+}

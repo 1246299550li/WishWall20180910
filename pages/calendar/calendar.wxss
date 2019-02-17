@@ -1,0 +1,163 @@
+.ret {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  font-size: 30rpx;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-gray {
+  color: gray;
+}
+
+.color-sign {
+  background-color: #49b5f6;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.cur-date {
+  text-decoration: underline;
+}
+
+.curdate-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12vh;
+  margin-bottom: 3vh;
+}
+
+.curdate-block button {
+  margin: 0rpx 60rpx;
+  background-color: #49b5f6;
+  color: #fff;
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.calendar-block {
+  margin-top: 20rpx;
+  width: 700rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 10rpx;
+}
+
+.calendar-day {
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-right: 10rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.sign-btn {
+  margin-top: 40rpx;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #49b5f6;
+  color: #fff;
+  letter-spacing: 10rpx;
+  padding: 0;
+}
+
+.bedge-icon {
+  margin-left: 2rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.bedge-box {
+  font-size: 35rpx;
+  position: absolute;
+  right: 8vw;
+  bottom: 8vw;
+}
+
+/* 模态框css */
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.6;
+  overflow: hidden;
+  z-index: 900;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 450rpx;
+  /* overflow: hidden; */
+  position: fixed;
+  top: 32%;
+  left: 150rpx;
+  border-radius: 25rpx;
+  background-color: white;
+  z-index: 999;
+}
+
+.modal-img {
+  position: absolute;
+  z-index: -9;
+  height: 400rpx;
+  width: 500rpx;
+  top: -30rpx;
+  left: -32rpx;
+}
+
+.modal-title {
+  padding: 10rpx 0 20rpx;
+  font-size: 38rpx;
+  color: rgb(126, 117, 117);
+  text-align: center;
+}
+
+.modal-text {
+  padding: 10rpx 0 20rpx;
+  text-align: center;
+  color: red;
+  font-size: 30rpx;
+}
+
+.modal-content {
+  padding: 28rpx 28rpx;
+  height: 250rpx;
+  font-size: 35rpx;
+}
+
+/*
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    height: 80rpx;
+    font-size: 38rpx;
+    line-height: 80rpx;
+    text-align: center;
+}*/
+
+.btn-cancel {
+  /* margin: 0 auto; */
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  margin: 0 auto;
+  width: 50%;
+  color: black;
+  text-align: center;
+}

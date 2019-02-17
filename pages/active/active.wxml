@@ -1,0 +1,25 @@
+<image src="{{background}}" mode='aspectFill' style='position:fixed;z-index:-1;height:100vh;width:100vh;'></image>
+<image src="{{background1}}" mode='aspectFill' mode="widthFix" style='margin-top:50rpx;width:100%;'></image>
+<view class="container">
+
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view wx:if="{{list}}" class="card">
+      <image wx:if="{{item.countDown==1}}" src="../../lib/img/iscoming.png" mode="widthFix" style='width:300rpx;margin-top:-200rpx'></image>
+      <view class="num">参与人数: {{item.numof}}</view>
+      <view class="section">{{item.active}}</view>
+      <view class='group'>
+        <view class="countDown">结束时间:{{item.dates}}</view>
+        <view class='btn' bindtap='participate' data-index='{{index}}' data-isact='{{item.isact}}' data-actid='{{item.id}}' data-active='{{item.active}}' data-dates='{{item.dates}}' data-titles='{{item.titles}}'>我要参与</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!list}}" class="none">
+    <text>暂无活动</text>
+  </view>
+  <view class='prize-box'>
+    <image class="prize-icon" src="{{prizeUrl}}" mode="cover" bindtap="goPrize"></image>
+    <view class='prize-text'>
+      <view>快来抽奖吧</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/bedge.wxml-->
+<view class="container">
+  <view class='ret' bindtap="ret">{{ret}}</view>
+  <view class='title'>我的勋章</view>
+  <view class="userinfo">
+    <image class="avatar" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='bedge-box'>
+    <image wx:for="{{bedgeList}}" src="{{item}}" class='bedge'></image>
+  </view>
+</view>

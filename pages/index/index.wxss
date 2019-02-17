@@ -1,0 +1,8 @@
+/**index.wxss**/
+.container{
+  text-align: center;
+}
+
+.usermotto {
+  margin-top: 200px;
+}

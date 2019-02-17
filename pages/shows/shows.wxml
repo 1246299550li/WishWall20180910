@@ -1,0 +1,43 @@
+<!-- pages/shows/shows.wxml -->
+<!--<modal hidden="{{hasUserInfo || !canIUse}}" confirmText="" cancelText="">
+<text style='line-height: 30px;'>新学期开始啦，之前立的flag倒了多少呢？这学期是不是又有很多flag要升起？快来这里定下你的小目标，和大家一起分享梦想实现的过程吧！</text>
+<text>\n\nTip:第一次进入别忘了到"我的"页面左上角的</text>
+<image src="../../lib/img/icon-set.png" style='height:40rpx;width:40rpx'></image>
+<text>处填写你的信息哦~</text>
+  <button type="primary" style='margin-top:50rpx' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 进入 </button>
+</modal>-->
+<image src="{{background1}}" mode='aspectFill' mode="widthFix" style='position:fixed;z-index:-1;width:100%;'></image>
+
+<view>
+  <view class='back'>
+    <image src="{{background}}" mode='aspectFill' mode="widthFix" style='width:100%;'></image>
+  </view>
+    <view class="inner">
+        <scroll-view class="scroll" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
+            <view wx:for="{{list}}" wx:for-index="lbl">
+                <view class="section se{{lbl%5}}">
+                  <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
+                  <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
+                  
+                    <image wx:if="{{item.com==1}}" src="../../lib/img/scom.png" style="right:65rpx;position:absolute;height:75rpx;width:75rpx"></image>
+                    <view style='margin-left:30%;'>
+                    <text style='line-height:35px;' >{{item.section}}</text>
+                    </view>
+                    <view wx:if="{{item.nick!=null}}" style='position:relative;color:#AAAAAA;margin-left:50%;'>
+                        <text style='font-size:medium'>——{{item.nick}}</text>
+                    </view>
+                    <view class="box" wx:if="{{item.com==1}}">
+                        <view class="box-up">
+                            <image class="box-image" wx:if="{{item.like==1}}" src="{{curUrl1}}"></image>
+                            <image class="box-image" wx:if="{{item.like!=1}}" src="{{imgUrl1}}" bindtap="toUp" data-id="{{item.id}}" data-index="{{lbl}}"></image>
+                            <text class="up-num">{{item.likeNum}}</text>
+                        </view>
+                        <image class="box-image" wx:if="{{item.like==2}}" src="{{curUrl2}}"></image>
+                        <image class="box-image" wx:if="{{item.like!=2}}" src="{{imgUrl2}}" bindtap="toDown" data-id="{{item.id}}" data-index="{{lbl}}"></image>
+                    </view>
+
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
