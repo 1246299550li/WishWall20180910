@@ -50,7 +50,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://localhost:62647/set',
+      url: WEB_ROOT + '/set',
       data: {
         userid: app.globalData.openid,
         col: that.data.college,

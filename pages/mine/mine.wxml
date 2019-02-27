@@ -14,7 +14,7 @@
         <text class="nickname">{{userInfo.nickName}}</text>
         <view class='funcgroup' wx:for="{{userlist}}">
             <view class='func'>
-                <text>收到赞\n{{item.like}}</text>
+                <text>收到赞\n{{item.likes}}</text>
             </view>
             <view class='func'>
                 <text>粉丝数\n{{item.fans}}</text>

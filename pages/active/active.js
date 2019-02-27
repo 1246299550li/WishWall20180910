@@ -10,7 +10,6 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/active.png",
     background1: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/activehead.png",
-    prizeUrl: '../../lib/img/prize.png'
   },
   //事件处理函数
   onLoad: function() {
@@ -58,9 +57,8 @@ Page({
     let userid = app.globalData.openid;
     let that = this;
     wx.request({
-      url: WEB_ROOT + 'imageView.php', //请求地址
+      url: WEB_ROOT + 'selectAct', //请求地址
       data: {
-        pa: -3,
         userid: userid
       },
       method: 'POST',
@@ -136,9 +134,8 @@ Page({
       return;
     }
     wx.request({
-      url: app.globalData.WEB_ROOT + 'save.php',
+      url: app.globalData.WEB_ROOT + 'saveJoin',
       data: {
-        ch: 2,
         section: e.currentTarget.dataset.titles,
         userid: app.globalData.openid,
         dates: e.currentTarget.dataset.dates,
@@ -166,40 +163,6 @@ Page({
 
       }
     })
-  },
-
-  goPrize: function() {
-    let that = this;
-    wx.request({
-      url: WEB_ROOT + 'prize.php', //请求地址
-      data: {
-        openid: app.globalData.openid,
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // POST默认值
-      },
-      success: function (res) {
-        console.log(res.data.id);
-        that.setData({
-          que: res.data[0].id
-        });
-        if(res.data[0].id==1){
-          wx.showModal({
-            content: "请先参与新年愿望活动哦~",
-            success: function (res) { }
-          })
-        }else{
-          wx.showModal({
-            content: "你的号码是："+that.data.que,
-            success: function (res) { }
-          })
-        }
-        
-      },
-      fail: function (err) { }, //请求失败
-      complete: function () { } //请求完成后执行的函数
-    });
   },
 
   onShareAppMessage: function() {

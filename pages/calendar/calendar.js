@@ -45,13 +45,11 @@ Page({
     }
     let paramYear = paramDate.getFullYear();
     wx.request({
-      // url: app.HTTP_SERVER + 'xcx/rest/getSignDates.htm',
-      url: WEB_ROOT + 'showDates.php',
+      url: WEB_ROOT + 'selectDate',
       data: {
         openid: app.globalData.openid,
         year: paramYear,
         month: paramMonth,
-        ch: 1
       },
       method: 'POST',
       header: {
@@ -130,9 +128,8 @@ Page({
   doSign: function() {
     let that = this;
     wx.request({
-      url: WEB_ROOT + 'showDates.php', //请求地址
+      url: WEB_ROOT + 'section', //返回一句话
       data: {
-        ch: 2
       },
       method: 'POST',
       header: {
@@ -149,10 +146,9 @@ Page({
             if (res.confirm) {
               // 调用服务器端，实现签到入库
               wx.request({
-                url: WEB_ROOT + 'showDates.php',
+                url: WEB_ROOT + 'signIn',
                 data: {
                   openid: app.globalData.openid,
-                  ch: 0
                 },
                 method: 'POST',
                 header: {

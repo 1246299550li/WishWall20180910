@@ -4,7 +4,7 @@ App({
     userInfo: null,
     openid: null,
     nowactid: null,
-    WEB_ROOT: 'https://lgaoyuan.club/signature/'
+    WEB_ROOT: 'https://lgaoyuan.club:8080/signature/'
   },
   onLaunch: function () {
     let that=this;
@@ -18,7 +18,7 @@ App({
       success: function (res) {
         if (res.code) {
           wx.request({
-            url: 'https://lgaoyuan.club/signature/getopenid.php',  //后台获取openid
+            url: 'https://lgaoyuan.club:8080/signature/getOpenId',  //后台获取openid
             header: { "Content-Type": "application/x-www-form-urlencoded" },
             method: "POST",
             data: {

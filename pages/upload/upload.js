@@ -5,18 +5,19 @@ var adds = {};
 Page({
     data: {
         img_arr: [],
-        background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/push.png"
+        background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/push.png",
+        re: "< 返回",
     },
     submit: function(e) {
         var that = this;
         for (var i = 0; i < this.data.img_arr.length; i++) {
             wx.uploadFile({
-                url: WEB_ROOT + 'save.php',
+              url: WEB_ROOT + 'upload',
                 filePath: that.data.img_arr[i],
                 name: 'file',
                 formData: {
-                    ch: 3,
-                    id: app.globalData.nowactid,
+                  id: app.globalData.nowactid,
+                  userid: app.globalData.openid
                 },
                 success: function(res) {
                     console.log(res)

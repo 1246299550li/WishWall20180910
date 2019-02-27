@@ -21,8 +21,7 @@
     
 </view>
 <view style='position:fixed;bottom:25rpx'>
-    <navigator url="../mine/mine" bindtap='nav' hover-class='none' style="padding-right:0">
-        <image class="weui-media-box__hd weui-media-box__hd_in-appmsg" src="../../lib/img/icon-return.png" mode='aspectFit' style='height:65rpx;width:65rpx'></image>
-        <text style='font-size:small'>返回</text>
+    <navigator url="../mine/mine" bindtap='nav' hover-class='none' style="margin-left:10rpx;">
+        <text style='font-size:small'>{{re}}</text>
     </navigator>
 </view>

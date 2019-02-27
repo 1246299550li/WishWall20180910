@@ -9,7 +9,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/mine.png",
-    background2: WEB_ROOT + "img/xtz.png"
+    background2: "https://lgaoyuan.club:8080/signatureimg/xtz.png"
   },
   //事件处理函数
   onLoad: function() {
@@ -77,9 +77,8 @@ Page({
     let userid = app.globalData.openid;
     let that = this;
     wx.request({
-      url: WEB_ROOT + 'imageView.php', //请求地址
+      url: WEB_ROOT + 'selectMessage', //请求地址
       data: {
-        pa: -2,
         userid: userid
       },
       method: 'POST',
@@ -119,9 +118,8 @@ Page({
     let userid = app.globalData.openid;
     let that = this;
     wx.request({
-      url: WEB_ROOT + 'imageView.php', //请求地址
+      url: WEB_ROOT + 'selectMine', //请求地址
       data: {
-        pa: -1,
         userid: userid
       },
       method: 'POST',
@@ -230,6 +228,16 @@ Page({
       })
     }, 1300)
   },
+
+/*取消红点*/
+  onTabItemTap(item) {
+    console.log(item.index)
+    wx.hideTabBarRedDot({
+      index: item.index,
+    })
+  },
+
+  
   onShareAppMessage: function() {
     return {
       title: '一起来设立你的小目标吧!',

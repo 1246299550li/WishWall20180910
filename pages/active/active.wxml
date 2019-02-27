@@ -16,10 +16,5 @@
   <view wx:if="{{!list}}" class="none">
     <text>暂无活动</text>
   </view>
-  <view class='prize-box'>
-    <image class="prize-icon" src="{{prizeUrl}}" mode="cover" bindtap="goPrize"></image>
-    <view class='prize-text'>
-      <view>快来抽奖吧</view>
-    </view>
-  </view>
+
 </view>

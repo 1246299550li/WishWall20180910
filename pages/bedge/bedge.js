@@ -57,17 +57,16 @@ Page({
   onShow: function() {
     let that = this;
     wx.request({
-      url: WEB_ROOT + 'showDates.php',
+      url: WEB_ROOT + 'returnMax',
       data: {
         openid: app.globalData.openid,
-        ch: 3
       },
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // POST默认值
       },
       success: res => {
-        let tmp = res.data[0];
+        let tmp = res.data[0].maxcon;
         console.log("连续签到天数");
         console.log(tmp);
         if (tmp == 0) {

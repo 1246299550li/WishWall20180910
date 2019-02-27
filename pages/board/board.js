@@ -14,6 +14,10 @@ Page({
   },
 
   onLoad: function(options) {
+    wx.showLoading({
+      title: '奋力加载中...',
+    })
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -53,6 +57,13 @@ Page({
       ymd: ymd
     })
     console.log(ymd);
+
+    wx.showTabBarRedDot({
+      index: 4,
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1000)
   },
   onShow: function() {
     let that = this;
@@ -89,9 +100,8 @@ Page({
     }
     console.log(that.data.dates);
     wx.request({
-      url: app.globalData.WEB_ROOT + 'save.php',
+      url: app.globalData.WEB_ROOT + 'saveCommon',
       data: {
-        ch: 0,
         section: that.data.section,
         userid: app.globalData.openid,
         dates: that.data.dates,

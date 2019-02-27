@@ -75,9 +75,8 @@ Page({
 
     var userid = app.globalData.openid;
     wx.request({
-      url: WEB_ROOT + 'attention.php', //请求地址
+      url: WEB_ROOT + 'getAtt', //请求地址
       data: {
-        ch: 1,
         userid: app.globalData.openid
       },
       method: 'POST',
@@ -139,10 +138,9 @@ Page({
       success: function(res) {
         if (res.confirm) {
           wx.request({
-            url: WEB_ROOT + 'attention.php',
+            url: WEB_ROOT + 'cancelAtt',
             data: {
               userid: userid,
-              ch: 2,
               attid: e.currentTarget.dataset.id,
             },
             method: 'POST',
