@@ -17,7 +17,7 @@ Page({
     wx.showLoading({
       title: '奋力加载中...',
     })
-    
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -58,11 +58,13 @@ Page({
     })
     console.log(ymd);
 
-    wx.showTabBarRedDot({
-      index: this.data.index,
-    })
-    
-    setTimeout(function () {
+    if (app.globalData.redindex > 0) {
+      wx.showTabBarRedDot({
+        index: this.data.index,
+      })
+    }
+
+    setTimeout(function() {
       wx.hideLoading()
     }, 1000)
   },

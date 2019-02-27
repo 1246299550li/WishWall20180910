@@ -53,6 +53,17 @@ Page({
         scrollH: wx.getSystemInfoSync().windowHeight * 0.75 - res[0].height * 1.1
       })
     })
+
+    wx.request({
+      url: WEB_ROOT + 'cancelDot',  //移除红点
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      method: "POST",
+      data: {
+        userid: app.globalData.openid,
+      },
+      success: function (res) {
+      }
+    })
   },
   onShow: function() {
     this.getMe();

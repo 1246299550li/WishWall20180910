@@ -4,6 +4,7 @@ App({
     userInfo: null,
     openid: null,
     nowactid: null,
+    redindex: null,
     WEB_ROOT: 'https://lgaoyuan.club:8080/signature/'
   },
   onLaunch: function () {
@@ -26,6 +27,18 @@ App({
               },
             success: function (res) {
               that.globalData.openid = res.data.openid;
+
+              wx.request({
+                url: 'https://lgaoyuan.club:8080/signature/redDot',  //获取红点
+                header: { "Content-Type": "application/x-www-form-urlencoded" },
+                method: "POST",
+                data: {
+                  userid: that.globalData.openid,
+                },
+                success: function (res) {
+                  that.globalData.redindex = res.data[0].reddot;
+                }
+              })
             }
           })
         } else {
@@ -53,5 +66,6 @@ App({
         }
       }
     })
+
   }
 })
