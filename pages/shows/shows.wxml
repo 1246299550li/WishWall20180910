@@ -30,7 +30,7 @@
                         <view class="box-up">
                             <image class="box-image" wx:if="{{item.like==1}}" src="{{curUrl1}}"></image>
                             <image class="box-image" wx:if="{{item.like!=1}}" src="{{imgUrl1}}" bindtap="toUp" data-id="{{item.id}}" data-index="{{lbl}}"></image>
-                            <text class="up-num">{{item.likeNum}}</text>
+                            <text class="up-num">{{item.likeo}}</text>
                         </view>
                         <image class="box-image" wx:if="{{item.like==2}}" src="{{curUrl2}}"></image>
                         <image class="box-image" wx:if="{{item.like!=2}}" src="{{imgUrl2}}" bindtap="toDown" data-id="{{item.id}}" data-index="{{lbl}}"></image>

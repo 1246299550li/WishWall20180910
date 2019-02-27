@@ -9,7 +9,7 @@ Page({
     src: "",
     section: "",
     background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/board.png",
-    index: 0,
+    index: 4,
     dates: ""
   },
 
@@ -59,8 +59,9 @@ Page({
     console.log(ymd);
 
     wx.showTabBarRedDot({
-      index: 4,
+      index: this.data.index,
     })
+    
     setTimeout(function () {
       wx.hideLoading()
     }, 1000)

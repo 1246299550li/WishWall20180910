@@ -14,7 +14,7 @@
   "window": {
     "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#FFE4B5",
-    "navigationBarTitleText": "签名墙",
+    "navigationBarTitleText": "心愿墙",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": false
   },

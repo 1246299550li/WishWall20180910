@@ -100,22 +100,7 @@ Page({
       },
       success: function(res) {
         console.log(res.data); //res.data相当于ajax里面的data,为后台返回的数据
-        if (res.data == 2) {
-          wx.showModal({
-            title: '提示',
-            content: '你还没有绑定信息呢，快去绑定吧',
-            showCancel: false,
-            confirmText: '去绑定',
-            success: function(res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: '../set/set'
-                })
-              }
-            }
-          })
-          return;
-        }
+        
         that.setData({
           list: res.data
         })
@@ -240,7 +225,7 @@ Page({
         console.log("点赞成功");
         let tmplist = that.data.list;
         tmplist[event.currentTarget.dataset.index].like = 1;
-        tmplist[event.currentTarget.dataset.index].likeNum++;
+        tmplist[event.currentTarget.dataset.index].likeo++;
         // console.log(tmplist[event.currentTarget.dataset.index].like);
         that.setData({
           list: tmplist
