@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+.head-avatar {
+  width: 328rpx;
+  height: 328rpx;
+  margin-top: 50%;
+  border-radius: 50%;
+}
+
 .usermotto {
   margin-top: 200px;
 }

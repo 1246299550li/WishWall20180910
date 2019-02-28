@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '冲鸭新学期',
     background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/active.png",
   },
   //事件处理函数

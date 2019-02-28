@@ -1,7 +1,7 @@
 <!--index.wxml-->
-<image src="{{background}}" mode='aspectFill' mode="widthFix" style='position:fixed;z-index:-1;width:100%;'></image>
 
 <view class="container">
+<image class="head-avatar" src="../../lib/img/cover.jpg" mode="cover"></image>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

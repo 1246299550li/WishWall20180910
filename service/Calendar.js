@@ -66,10 +66,10 @@ function getMaxDate(paramDate){
 
   if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
     return 31;
-  } else if (month === 2 || month === 4 || month === 6 || month === 9 || month === 11) {
+  } else if (month === 4 || month === 6 || month === 9 || month === 11) {
     return 30;
   } else {//2月（润月）
-    return (year - 2000) % 4 === 0 ? 29 : 30;
+    return (year - 2000) % 4 === 0 ? 29 : 28;
   }
 }
 
