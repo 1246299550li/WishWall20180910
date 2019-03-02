@@ -9,7 +9,9 @@
     "pages/active/active",
     "pages/calendar/calendar",
     "pages/upload/upload",
-    "pages/bedge/bedge"
+    "pages/bedge/bedge",
+    "pages/time/time",
+    "pages/tomato/tomato"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -30,10 +32,10 @@
         "selectedIconPath": "lib/img/iconHL/wall.png"
       },
       {
-        "pagePath": "pages/follow/follow",
-        "text": "关注",
-        "iconPath": "lib/img/icon/follow.png",
-        "selectedIconPath": "lib/img/iconHL/follow.png"
+        "pagePath": "pages/tomato/tomato",
+        "text": "专注",
+        "iconPath": "lib/img/icon/time.png",
+        "selectedIconPath": "lib/img/iconHL/time.png"
       },
       {
         "pagePath": "pages/board/board",
