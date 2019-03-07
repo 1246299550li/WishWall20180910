@@ -1,59 +1,55 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/board/board",
-    "pages/shows/shows",
-    "pages/mine/mine",
-    "pages/set/set",
-    "pages/follow/follow",
-    "pages/active/active",
-    "pages/calendar/calendar",
-    "pages/upload/upload",
-    "pages/bedge/bedge"
-  ],
-  "window": {
-    "navigationStyle": "custom",
-    "navigationBarBackgroundColor": "#FFE4B5",
-    "navigationBarTitleText": "心愿墙",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": false
-  },
-  "tabBar": {
-    "color": "#333333",
-    "selectedColor": "#336633",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/shows/shows",
-        "text": "榜单",
-        "iconPath": "lib/img/icon/wall.png",
-        "selectedIconPath": "lib/img/iconHL/wall.png"
-      },
-      {
-        "pagePath": "pages/follow/follow",
-        "text": "关注",
-        "iconPath": "lib/img/icon/follow.png",
-        "selectedIconPath": "lib/img/iconHL/follow.png"
-      },
-      {
-        "pagePath": "pages/board/board",
-        "text": "插旗",
-        "iconPath": "lib/img/icon/pen.png",
-        "selectedIconPath": "lib/img/icon/pen.png"
-      },
-      {
-        "pagePath": "pages/active/active",
-        "text": "活动",
-        "iconPath": "lib/img/icon/active.png",
-        "selectedIconPath": "lib/img/iconHL/active.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "lib/img/icon/me.png",
-        "selectedIconPath": "lib/img/iconHL/me.png"
-      }
-    ]
-  },
-  "debug": true
+    "pages": [
+        "pages/index/index",
+        "pages/board/board",
+        "pages/shows/shows",
+        "pages/mine/mine",
+        "pages/set/set",
+        "pages/active/active",
+        "pages/calendar/calendar",
+        "pages/upload/upload",
+        "pages/bedge/bedge",
+        "pages/follow/follow",
+        "pages/fans/fans",
+        "pages/data/data"
+    ],
+    "window": {
+        "navigationStyle": "custom",
+        "navigationBarBackgroundColor": "#FFE4B5",
+        "navigationBarTitleText": "心愿墙",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#336633",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/shows/shows",
+                "text": "榜单",
+                "iconPath": "lib/img/icon/wall.png",
+                "selectedIconPath": "lib/img/iconHL/wall.png"
+            },
+            {
+                "pagePath": "pages/board/board",
+                "text": "插旗",
+                "iconPath": "lib/img/icon/pen.png",
+                "selectedIconPath": "lib/img/icon/pen.png"
+            },
+            {
+                "pagePath": "pages/active/active",
+                "text": "活动",
+                "iconPath": "lib/img/icon/active.png",
+                "selectedIconPath": "lib/img/iconHL/active.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "lib/img/icon/me.png",
+                "selectedIconPath": "lib/img/iconHL/me.png"
+            }
+        ]
+    },
+    "debug": true
 }

@@ -17,7 +17,9 @@
                 <text>收到赞\n{{item.likes}}</text>
             </view>
             <view class='func'>
-                <text>粉丝数\n{{item.fans}}</text>
+                <view hover="true" hover-class="func-hover" style='height:100%' bindtap='goToFans'>
+                    <text>粉丝数\n{{item.fans}}</text>
+                </view>
             </view>
             <view class='func'>
                 <text>积分\n{{item.score}}</text>
@@ -45,7 +47,7 @@
         <text>还没有小目标呢，快去设立目标吧</text>
     </view>
     <view style='height:300rpx;width:100%'></view>
-</scroll-view> 
- <view style='bottom:0;position:fixed;width:100%;text-align:center;z-index:-9;'>
+</scroll-view>
+<view style='bottom:0;position:fixed;width:100%;text-align:center;z-index:-9;'>
     <image src="{{background2}}" mode="widthFix" style='width:40%;'></image>
 </view>

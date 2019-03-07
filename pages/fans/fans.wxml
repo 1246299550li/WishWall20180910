@@ -1,0 +1,20 @@
+<!--pages/fans/fans.wxml-->
+<view class="inner">
+    <view class='back'>
+        <image src="{{background}}" mode='aspectFill' mode="widthFix" style='width:100%;'></image>
+    </view>
+    <scroll-view class="scrollbox" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
+        <view wx:for="{{list}}" wx:for-index="lbl">
+            <view class='block' hover="true" hover-class="block-hover"  bindtap='goToData'>
+                <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
+                <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
+                <text class='nick'>{{item.nick}}</text>
+                <view class='followIcon'>{{isFollow}}</view>
+            </view>
+            <view style='margin-top:16rpx;border:1rpx solid rgb(151,151,153);'></view>
+        </view>
+        <view wx:if="{{!list}}" class="none">
+            <text>暂无粉丝哦!</text>
+        </view>
+    </scroll-view>
+</view>

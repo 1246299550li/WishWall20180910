@@ -3,7 +3,7 @@
 const app = getApp()
 const WEB_ROOT = app.globalData.WEB_ROOT;
 let canUseReachBottom = true;
-
+ 
 Page({
   data: {
     list: [],

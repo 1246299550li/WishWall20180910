@@ -1,5 +1,4 @@
-/**index.wxss**/
-
+/* pages/data/data.wxss */
 .container {
     width: 92vw;
     margin-left: 4vw;
