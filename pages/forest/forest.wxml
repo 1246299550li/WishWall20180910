@@ -1,0 +1,71 @@
+<image src="{{background}}" mode='aspectFill' mode="widthFix" style='width:100%;position:fixed;z-index:-1;top:0'></image>
+<view class='content'>
+  <view style='width:100%;text-align:center;top:25%;position:absolute;'>
+    <image src='../../lib/img/tomato.png' style='width:500rpx;'></image>
+  </view>
+  <view class='time' style='color:rgb(176,210,196);font-size:110rpx'>
+    <picker bindchange="pickChange" value="{{index}}" range="{{array}}">
+      <view class='date'>
+        {{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class='msg' style='color:rgb(176,210,196);'>
+    <text bindtap='actionclick'>{{message}}</text>
+  </view>
+
+
+  <!--我的记录-->
+  <view class='mask' wx:if='{{reportshow}}' bindtap='clickMask'>
+    <view class='modal-content' style='height:80%'>
+      <scroll-view scroll-y class='main-content'>
+      <view style='width:100%;text-align:center;'><image style='width:75px;height:75px;margin:2%;' src="../../lib/img/myreport.png"></image></view>
+        <view wx:for="{{list}}" wx:for-index="lbl" class='scroll'>
+          <text style='line-height:35px;'>{{lbl+1}}.</text>
+          <text style='line-height:35px;' decode="{{true}}">&nbsp;{{item.dates}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.time}}min</text>
+        </view>
+      </scroll-view>
+      <view class='modal-btn-wrapper'>
+        <view class='confirm-btn' style='color:rgb(8, 184, 8)' bindtap='confirm'>关闭</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='list-box left' bindtap='report'>
+    <image class="list-icon" src="{{reportUrl}}" mode="cover"></image>
+    <view class='list'>
+      <view>纪录</view>
+    </view>
+  </view>
+  <!--我的记录-->
+
+  <!--排行榜-->
+  <view class='mask' wx:if='{{listshow}}' bindtap='clickMask'>
+    <view class='modal-content' style='height:80%'>
+      <scroll-view scroll-y class='main-content'>
+      <view style='width:100%;text-align:center;'><image style='width:85px;height:75px;margin-top:2%;' src="../../lib/img/top.png"></image></view>
+      
+        <view wx:for="{{list}}" wx:for-index="lbl" class='scroll'>
+          <text>{{lbl+1}}</text>
+          <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png"></image>
+          <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}"></image>
+          <text decode="{{true}}">{{item.nick}}</text>
+          <view style='display: inline;float: right;padding-top: 30px;padding-right: 30px;'><text>{{item.time}}min</text></view>
+          
+          <view style='width:90%;bottom:0;border:1rpx solid rgb(151,151,153);'></view>
+        </view>
+      </scroll-view>
+      <view class='modal-btn-wrapper'>
+        <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm1'>关闭</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='list-box right' bindtap='list'>
+    <image class="list-icon" src="{{listUrl}}" mode="cover"></image>
+    <view class='list'>
+      <view>排行榜</view>
+    </view>
+  </view>
+  <!--排行榜-->
+</view>

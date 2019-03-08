@@ -1,8 +1,9 @@
 <!--index.wxml-->
 
 <view class="container">
-<image class="head-avatar" src="../../lib/img/cover.jpg" mode="cover"></image>
+  <image class="head-avatar" src="../../lib/img/cover.jpg" mode="cover"></image>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <progress class='progress' show-info percent="100" active='true' stroke-width="14" color='rgba(0, 0, 255, 0.2)' />
 </view>

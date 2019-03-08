@@ -57,14 +57,6 @@ Page({
       },
       success: res => {
         //后台返回的日期
-        // console.log("返回的日期" + res.data);
-        // let signDates  = res.data;
-        // let rest = res.data;
-        // let ttt = [1, 2, 3];
-        // let tt = new Date();
-        // let ttt = tt.getDate();
-        // console.log(ttt);
-        console.log(res.data);
         let signDates = res.data;
         //当前年月日
         let now = new Date(); //当前时间

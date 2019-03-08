@@ -1,3 +1,0 @@
-<!--pages/patato/patato.wxml-->
-<text>pages/patato/patato.wxml</text>
-<button bindtap='goto'>开始</button>

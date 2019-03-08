@@ -7,8 +7,8 @@ App({
     redindex: null,
     WEB_ROOT: 'https://lgaoyuan.club:8080/signature/'
   },
-  onLaunch: function () {
-    let that=this;
+  onLaunch: function() {
+    let that = this;
     // 展示本地存储能力
     let logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -16,27 +16,32 @@ App({
 
     // 登录
     wx.login({
-      success: function (res) {
+      success: function(res) {
         if (res.code) {
           wx.request({
-            url: 'https://lgaoyuan.club:8080/signature/getOpenId',  //后台获取openid
-            header: { "Content-Type": "application/x-www-form-urlencoded" },
+            url: 'https://lgaoyuan.club:8080/signature/getOpenId', //后台获取openid
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
             method: "POST",
             data: {
               code: res.code,
-              },
-            success: function (res) {
+            },
+            success: function(res) {
               that.globalData.openid = res.data.openid;
 
               wx.request({
-                url: 'https://lgaoyuan.club:8080/signature/redDot',  //获取红点
-                header: { "Content-Type": "application/x-www-form-urlencoded" },
+                url: 'https://lgaoyuan.club:8080/signature/redDot', //获取红点
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
                 method: "POST",
                 data: {
                   userid: that.globalData.openid,
                 },
-                success: function (res) {
-                  that.globalData.redindex = res.data[0].reddot;
+                success: function(res) {
+                  if (res.data[0].reddot != undefined)
+                    that.globalData.redindex = res.data[0].reddot;
                 }
               })
             }

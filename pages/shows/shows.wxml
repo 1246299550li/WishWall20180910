@@ -12,32 +12,32 @@
   <view class='back'>
     <image src="{{background}}" mode='aspectFill' mode="widthFix" style='width:100%;'></image>
   </view>
-    <view class="inner">
-        <scroll-view class="scroll" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
-            <view wx:for="{{list}}" wx:for-index="lbl">
-                <view class="section se{{lbl%5}}">
-                  <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
-                  <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
-                  
-                    <image wx:if="{{item.com==1}}" src="../../lib/img/scom.png" style="right:65rpx;position:absolute;height:75rpx;width:75rpx"></image>
-                    <view style='margin-left:30%;'>
-                    <text style='line-height:35px;' >{{item.section}}</text>
-                    </view>
-                    <view wx:if="{{item.nick!=null}}" style='position:relative;color:#AAAAAA;margin-left:50%;'>
-                        <text style='font-size:medium'>——{{item.nick}}</text>
-                    </view>
-                    <view class="box" wx:if="{{item.com==1}}">
-                        <view class="box-up">
-                            <image class="box-image" wx:if="{{item.like==1}}" src="{{curUrl1}}"></image>
-                            <image class="box-image" wx:if="{{item.like!=1}}" src="{{imgUrl1}}" bindtap="toUp" data-id="{{item.id}}" data-index="{{lbl}}"></image>
-                            <text class="up-num">{{item.likeo}}</text>
-                        </view>
-                        <image class="box-image" wx:if="{{item.like==2}}" src="{{curUrl2}}"></image>
-                        <image class="box-image" wx:if="{{item.like!=2}}" src="{{imgUrl2}}" bindtap="toDown" data-id="{{item.id}}" data-index="{{lbl}}"></image>
-                    </view>
+  <view class="inner">
+    <scroll-view class="scroll" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
+      <view wx:for="{{list}}" wx:for-index="lbl">
+        <view class="section se{{lbl%5}}">
+          <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
+          <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
 
-                </view>
+          <image wx:if="{{item.com==1}}" src="../../lib/img/scom.png" style="right:65rpx;position:absolute;height:75rpx;width:75rpx"></image>
+          <view style='margin-left:30%;'>
+            <text style='line-height:35px;'>{{item.section}}</text>
+          </view>
+          <view wx:if="{{item.nick!=null}}" style='position:relative;color:#AAAAAA;margin-left:50%;'>
+            <text style='font-size:medium'>——{{item.nick}}</text>
+          </view>
+          <view class="box" wx:if="{{item.com==1}}">
+            <view class="box-up">
+              <image class="box-image" wx:if="{{item.like==1}}" src="{{curUrl1}}"></image>
+              <image class="box-image" wx:if="{{item.like!=1}}" src="{{imgUrl1}}" bindtap="toUp" data-id="{{item.id}}" data-index="{{lbl}}"></image>
+              <text class="up-num">{{item.likeo}}</text>
             </view>
-        </scroll-view>
-    </view>
+            <image class="box-image" wx:if="{{item.like==2}}" src="{{curUrl2}}"></image>
+            <image class="box-image" wx:if="{{item.like!=2}}" src="{{imgUrl2}}" bindtap="toDown" data-id="{{item.id}}" data-index="{{lbl}}"></image>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
 </view>

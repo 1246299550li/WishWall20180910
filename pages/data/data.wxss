@@ -1,0 +1,162 @@
+/* pages/data/data.wxss */
+
+.ret {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: 34rpx;
+}
+
+.container {
+    width: 92vw;
+    margin-left: 4vw;
+    margin-top: 10%;
+    /* background-color: greenyellow; */
+}
+
+.set {
+    position: absolute;
+    top: 7vh;
+    left: 7vw;
+}
+
+.calendar {
+    position: absolute;
+    top: 10vh;
+    right: 4vw;
+}
+
+.calendar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-hover {
+    border-radius: 10rpx;
+    background-color: gray;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92vw;
+}
+
+.avatar {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+}
+
+.nickname {
+    color: rgb(179, 211, 188);
+    font-size: large;
+}
+
+.funcgroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.func {
+    height: 110rpx;
+    width: 25%;
+    text-align: center;
+}
+
+.func-hover {
+    border-radius: 10rpx;
+    background-color: gray;
+}
+
+.scrollbox {
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 86%;
+    padding: 2%;
+    padding-top: 8%;
+    padding-bottom: 5%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-image: url(https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/minebox.png);
+}
+
+.title {
+    width: 100rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+    margin-left: 9%;
+    color: rgb(74, 53, 7);
+    font-size: 46rpx;
+    border-radius: 14%;
+}
+
+.followIcon1 {
+    position: absolute;
+    top: 150rpx;
+    right: 74rpx;
+    height: 50rpx;
+    width: 140rpx;
+    font-size: 34rpx;
+    padding-bottom: 5rpx;
+    padding-top: 10rpx;
+    text-align: center;
+    border-radius: 18rpx;
+    background-color: rgb(0, 162, 255);
+    color: white;
+}
+
+.followIcon2 {
+    position: absolute;
+    top: 150rpx;
+    right: 74rpx;
+    height: 50rpx;
+    width: 140rpx;
+    font-size: 34rpx;
+    padding-bottom: 5rpx;
+    padding-top: 10rpx;
+    text-align: center;
+    border-radius: 18rpx;
+    background-color: rgb(235, 235, 235);
+    color: rgb(70, 70, 70);
+}
+
+.followIcon-hover {
+    opacity: 0.8;
+}
+
+.section {
+    width: 90%;
+    word-break: break-all;
+    margin: 15rpx auto;
+    font-size: 40rpx;
+}
+
+.countDown {
+    width: 90%;
+    margin-left: 46%;
+    color: rgb(104, 110, 108);
+}
+
+.btn {
+    background-color: rgba(179, 211, 188, 0.8);
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 25rpx;
+    width: 25%;
+    left: 20%;
+}
+
+.none {
+    width: 100%;
+    margin-top: 40%;
+    text-align: center;
+    position: absolute;
+    color: rgb(126, 117, 117);
+}

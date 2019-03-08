@@ -101,7 +101,6 @@ Page({
       });
       return;
     }
-    console.log(that.data.dates);
     wx.request({
       url: app.globalData.WEB_ROOT + 'saveCommon',
       data: {

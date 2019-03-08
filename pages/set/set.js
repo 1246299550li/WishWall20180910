@@ -57,7 +57,6 @@ Page({
         name: that.data.name,
         avatarUrl: that.data.userInfo.avatarUrl,
         nick: app.globalData.userInfo.nickName,
-        reqid: that.data.invitation_id,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',

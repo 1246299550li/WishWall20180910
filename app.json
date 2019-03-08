@@ -10,8 +10,8 @@
     "pages/calendar/calendar",
     "pages/upload/upload",
     "pages/bedge/bedge",
-    "pages/time/time",
-    "pages/tomato/tomato"
+    "pages/forest/forest",
+    "pages/time/time"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -32,7 +32,7 @@
         "selectedIconPath": "lib/img/iconHL/wall.png"
       },
       {
-        "pagePath": "pages/tomato/tomato",
+        "pagePath": "pages/forest/forest",
         "text": "专注",
         "iconPath": "lib/img/icon/time.png",
         "selectedIconPath": "lib/img/iconHL/time.png"

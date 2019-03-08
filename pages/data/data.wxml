@@ -1,0 +1,42 @@
+<!--pages/data/data.wxml-->
+<image src="{{background}}" mode="widthFix" style='position:absolute;z-index:-9;width:100vw; top:0;'></image>
+<view class="container" id='userbox'>
+    <view class='ret' bindtap="ret">{{ret}}</view>
+    <view class="{{isFollow?'followIcon2':'followIcon1'}}" catchtap="{{isFollow?'unfollowing':'following'}}" hover="true" hover-class="followIcon-hover">{{isFollow?'已关注':'关注'}}</view>
+    <view class="userinfo">
+        <image class="avatar" bindtap="bindViewTap" src="{{userlist[0].avatarUrl}}" mode="cover"></image>
+        <text class="nickname">{{userlist[0].nick}}</text>
+        <view class='funcgroup' wx:for="{{userlist}}">
+            <view class='func'>
+                <text>收到赞\n{{item.likes}}</text>
+            </view>
+            <view class='func'>
+                <text>粉丝数\n{{item.fans}}</text>
+            </view>
+            <view class='func'>
+                <text>积分\n{{item.score}}</text>
+            </view>
+            <view class='func'>
+                <text>关注\n{{item.att}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<scroll-view scroll-y class='scrollbox' style='height: {{scrollH}}px'>
+    <view wx:for="{{list}}" wx:key="{{index}}">
+        <view style='width:85%;margin-top:5%;margin-left:6%;border:1rpx solid rgb(151,151,153);'> </view>
+        <view style="text-align:center">
+            <image wx:if="{{item.com==1}}" src="../../lib/img/com.png" mode="widthFix" style='width:300rpx;margin-top:-50rpx'></image>
+            <image wx:if="{{item.countDown =='未完成'&&item.com==0}}" src="../../lib/img/ncom.png" mode="widthFix" style='width:300rpx;margin-top:-60rpx'></image>
+        </view>
+        <view class="countDown" wx:if="{{item.com==0 && item.countDown !='未完成'}}">{{item.countDown}}</view>
+        <view class="section">{{item.section}}</view>
+    </view>
+    <view wx:if="{{!list}}" class="none">
+        <text>他(她)还没有小目标呢</text>
+    </view>
+    <view style='height:300rpx;width:100%'></view>
+</scroll-view>
+<view style='bottom:0;position:fixed;width:100%;text-align:center;z-index:-9;'>
+    <image src="{{background2}}" mode="widthFix" style='width:40%;'></image>
+</view>

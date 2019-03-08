@@ -5,16 +5,16 @@
   </view>
   <scroll-view class="scrollbox" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
     <view wx:for="{{list}}" wx:for-index="lbl">
-    <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
-    <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
-        <view style='margin-left:30%;margin-top:-15%'>
+      <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
+      <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
+      <view style='margin-left:30%;margin-top:-15%'>
         <text style='line-height:35px;color:rgb(151,151,153);word-wrap: break-word;'>{{item.section}}</text>
         <image wx:if="{{item.com==1}}" src="../../lib/img/scom.png" style="right:65rpx;position:absolute;height:75rpx;width:75rpx;"></image>
-        </view>
-        <view style='width:90%;margin-top:8%;border:1rpx solid rgb(151,151,153);'></view>
+      </view>
+      <view style='width:90%;margin-top:8%;border:1rpx solid rgb(151,151,153);'></view>
     </view>
     <view wx:if="{{!list}}" class="none">
-        <text>暂无关注的人</text>
+      <text>暂无关注的人</text>
     </view>
-    </scroll-view>
-    </view>
+  </scroll-view>
+</view>

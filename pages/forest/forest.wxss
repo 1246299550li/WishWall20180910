@@ -1,0 +1,113 @@
+page {
+  background-color: rgb(255, 252, 237);
+}
+
+.time {
+  position: absolute;
+  top: 70%;
+  left: 32%;
+}
+
+.msg {
+  position: absolute;
+  top: 85%;
+  left: 41%;
+}
+
+.list-icon {
+  margin-left: 2rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.list-box {
+  font-size: 25rpx;
+  position: absolute;
+  bottom: 5vw;
+}
+
+.left {
+  left: 5vw;
+}
+
+.right {
+  right: 5vw;
+}
+
+.list {
+  text-align: center;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  /* height: 80%; */
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 2rpx solid rgba(7, 17, 27, 0.1);
+}
+
+.cancel-btn, .confirm-btn {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.cancel-btn {
+  border-right: 2rpx solid rgba(7, 17, 27, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.scroll {
+  color: rgb(110, 110, 110);
+  padding-left: 5%;
+  font-size: 17px;
+  height: 85px;
+}
+
+.userinfo {
+  margin: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  align-items: center;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}

@@ -1,6 +1,6 @@
 //index.js
-//获取应用实例
-const app = getApp()
+const app = getApp();
+const WEB_ROOT = app.globalData.WEB_ROOT;
 
 Page({
   data: {
@@ -15,15 +15,25 @@ Page({
   },
   onLoad: function() {
     setTimeout(function() {
-      if (app.globalData.openid == null) {
-        wx.reLaunch({
-          url: '../set/set',
-        })
-      } else {
-        wx.reLaunch({
-          url: '../board/board',
-        })
-      }
-    }, 3000)
+      wx.request({
+        url: WEB_ROOT + 'selectUser',  //判断是否注册
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        method: "POST",
+        data: {
+          userid: app.globalData.openid,
+        },
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.reLaunch({
+              url: '../set/set',
+            })
+          } else {
+            wx.reLaunch({
+              url: '../board/board',
+            })
+          }
+        }
+      })
+    }, 2900)
   },
 })
