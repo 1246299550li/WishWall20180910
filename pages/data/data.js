@@ -8,11 +8,18 @@ Page({
         userInfo: {},
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        openid: null,
+        isFollow: false,
         background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/mine.png",
         background2: "https://lgaoyuan.club:8080/signatureimg/xtz.png"
     },
     //事件处理函数
-    onLoad: function () {
+    onLoad: function(options) {
+        console.log(options);
+        this.setData({
+            openid: options.openid
+        })
+        console.log("传值成功")
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
@@ -44,7 +51,7 @@ Page({
         let query = wx.createSelectorQuery();
         //选择id
         query.select('#userbox').boundingClientRect()
-        query.exec(function (res) {
+        query.exec(function(res) {
             //res就是 所有标签为mjltest的元素的信息 的数组
             console.log(res);
             //取高度
@@ -53,24 +60,13 @@ Page({
                 scrollH: wx.getSystemInfoSync().windowHeight * 0.75 - res[0].height * 1.1
             })
         })
-
-        wx.request({
-            url: WEB_ROOT + 'cancelDot', //移除红点
-            header: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            method: "POST",
-            data: {
-                userid: app.globalData.openid,
-            },
-            success: function (res) { }
-        })
     },
-    onShow: function () {
+    onShow: function() {
+        console.log("加载成功")
         this.getMe();
         this.getIf();
     },
-    getUserInfo: function (e) {
+    getUserInfo: function(e) {
         console.log(e)
         app.globalData.userInfo = e.detail.userInfo
         this.setData({
@@ -78,33 +74,34 @@ Page({
             hasUserInfo: true
         })
     },
-    goToFollow: function () {
-        setTimeout(function () {
+    goToFollow: function() {
+        setTimeout(function() {
             wx.navigateTo({
                 url: '../follow/follow',
             })
         }, 200)
     },
-    goToFans: function () {
-        setTimeout(function () {
+    goToFans: function() {
+        setTimeout(function() {
             wx.navigateTo({
                 url: '../fans/fans',
             })
         }, 200)
     },
-    getMe: function () {
+    getMe: function() {
         let userid = app.globalData.openid;
         let that = this;
         wx.request({
-            url: WEB_ROOT + 'selectMessage', //请求地址
+            url: WEB_ROOT + 'getOthers', //请求地址
             data: {
-                userid: userid
+                userid: userid,
+                openid: that.data.openid
             },
             method: 'POST',
             header: {
                 'content-type': 'application/x-www-form-urlencoded' // POST默认值
             },
-            success: function (res) {
+            success: function(res) {
                 console.log(res.data); //res.data相当于ajax里面的data,为后台返回的数据
                 if (res.data == 2) {
                     wx.showModal({
@@ -112,7 +109,7 @@ Page({
                         content: '你还没有绑定信息呢，快去绑定吧',
                         showCancel: false,
                         confirmText: '去绑定',
-                        success: function (res) {
+                        success: function(res) {
                             if (res.confirm) {
                                 wx.navigateTo({
                                     url: '../set/set'
@@ -123,29 +120,29 @@ Page({
                     return;
                 }
                 that.setData({
-                    userlist: res.data
+                    userlist: res.data,
+                    isFollow: res.data.ifatt
                 })
             },
-            fail: function (err) { }, //请求失败
-            complete: function () {
+            fail: function(err) {}, //请求失败
+            complete: function() {
                 that.deal();
             } //请求完成后执行的函数
         });
     },
 
-    getIf: function () {
-        let userid = app.globalData.openid;
+    getIf: function() {
         let that = this;
         wx.request({
             url: WEB_ROOT + 'selectMine', //请求地址
             data: {
-                userid: userid
+                userid: that.data.openid
             },
             method: 'POST',
             header: {
                 'content-type': 'application/x-www-form-urlencoded' // POST默认值
             },
-            success: function (res) {
+            success: function(res) {
                 console.log(res.data);
                 if (res.data == 2) {
                     wx.showModal({
@@ -153,7 +150,7 @@ Page({
                         content: '你还没有绑定信息呢，快去绑定吧',
                         showCancel: false,
                         confirmText: '去绑定',
-                        success: function (res) {
+                        success: function(res) {
                             if (res.confirm) {
                                 wx.navigateTo({
                                     url: '../set/set'
@@ -167,19 +164,17 @@ Page({
                     list: res.data
                 })
             },
-            fail: function (err) { }, //请求失败
-            complete: function () {
+            fail: function(err) {}, //请求失败
+            complete: function() {
                 that.deal();
             } //请求完成后执行的函数
         });
     },
 
-    deal: function () {
+    deal: function() {
         let datas = this.data.list;
-        // console.log(datas);
         let nowTime = new Date().getTime();
         for (let i = 0; i < datas.length; i++) {
-            // console.log(datas[i].dates);
             let endTime = new Date(datas[i].dates.replace(/\-/g, "/")).getTime();
             if (endTime - nowTime > 0) {
                 let time = (endTime - nowTime) / 1000;
@@ -194,18 +189,88 @@ Page({
             list: datas
         })
     },
-    
+    following: function() {
+        let that = this;
+        let userid = app.globalData.openid;
+        if (that.data.openid !== userid) {
+            wx.showModal({
+                content: "是否关注此人",
+                showCancel: true,
+                success: function(res) {
+                    if (res.confirm) {
+                        wx.request({
+                            url: WEB_ROOT + 'attOthers',
+                            data: {
+                                userid: userid,
+                                attid: that.data.openid,
+                            },
+                            method: 'POST',
+                            header: {
+                                'content-type': 'application/x-www-form-urlencoded' // POST默认值
+                            },
+                            success: function(res) {
+                                wx.showToast({
+                                    title: '关注成功',
+                                    icon: 'succes',
+                                    duration: 1800,
+                                })
+                                that.changeStyle();
+                            },
+                            fail: function(err) {}, //请求失败
+                            complete: function() {} //请求完成后执行的函数
+                        })
 
-    /*取消红点*/
-    onTabItemTap(item) {
-        console.log(item.index)
-        wx.hideTabBarRedDot({
-            index: item.index,
-        })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+            })
+        }
     },
-
-
-    onShareAppMessage: function () {
+    unfollowing: function() {
+        let that = this;
+        let userid = app.globalData.openid;
+        if (that.data.openid !== userid) {
+            wx.showModal({
+                content: "确定要取消关注吗",
+                showCancel: true,
+                success: function(res) {
+                    if (res.confirm) {
+                        wx.request({
+                            url: WEB_ROOT + 'attOthers',
+                            data: {
+                                userid: userid,
+                                attid: that.data.openid,
+                            },
+                            method: 'POST',
+                            header: {
+                                'content-type': 'application/x-www-form-urlencoded' // POST默认值
+                            },
+                            success: function(res) {
+                                wx.showToast({
+                                    title: '取消关注成功',
+                                    icon: 'succes',
+                                    duration: 1800,
+                                })
+                                that.changeStyle();
+                            },
+                            fail: function(err) {}, //请求失败
+                            complete: function() {} //请求完成后执行的函数
+                        })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+            })
+        }
+    },
+    changeStyle: function() {
+        let that = this;
+        that.setData({
+            isFollow: !that.data.isFollow
+        });
+    },
+    onShareAppMessage: function() {
         return {
             title: '一起来设立你的小目标吧!',
         }

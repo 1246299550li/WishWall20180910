@@ -1,6 +1,7 @@
 <!--pages/data/data.wxml-->
 <image src="{{background}}" mode="widthFix" style='position:absolute;z-index:-9;width:100vw; top:0;'></image>
 <view class="container" id='userbox'>
+    <view class="{{isFollow?'followIcon2':'followIcon1'}}" catchtap="{{isFollow?'unfollowing':'following'}}" hover="true" hover-class="followIcon-hover" >{{isFollow?'已关注':'关注'}}</view>
     <view class="userinfo">
         <image class="avatar" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="nickname">{{userInfo.nickName}}</text>

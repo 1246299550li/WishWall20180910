@@ -5,11 +5,13 @@
     </view>
     <scroll-view class="scrollbox" scroll-y style='height:{{scrollH}}px' lower-threshold='1000' bindscrolltolower="onReachBottom">
         <view wx:for="{{list}}" wx:for-index="lbl">
-            <view class='block' hover="true" hover-class="block-hover"  bindtap='goToData'>
-                <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" bindtap='cli' data-id='{{item.userid}}'></image>
-                <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" bindtap='cli' data-id='{{item.userid}}'></image>
+            <view class='block' hover="true" hover-class="block-hover" bindtap='goToData' data-index="{{lbl}}">
+                <image class="userinfo" wx:if="{{item.avatarUrl==null}}" src="../../lib/img/head/unknow.png" data-id='{{item.userid}}'></image>
+
+                <image class="userinfo" wx:if="{{item.avatarUrl!=null}}" src="{{item.avatarUrl}}" data-id='{{item.userid}}'></image>
+
                 <text class='nick'>{{item.nick}}</text>
-                <view class='followIcon'>{{isFollow}}</view>
+                <!-- <view class="{{item.isFollow?'followIcon2':'followIcon1'}}" catchtap="{{item.isFollow?'unfollowing':'following'}}" hover="true" hover-class="followIcon-hover" data-id='{{item.userid}}'data-index="{{lbl}}">{{item.isFollow?'已关注':'关注'}}</view> -->
             </view>
             <view style='margin-top:16rpx;border:1rpx solid rgb(151,151,153);'></view>
         </view>

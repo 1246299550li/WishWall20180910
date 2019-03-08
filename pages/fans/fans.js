@@ -7,24 +7,20 @@ Page({
     data: {
         list: [{
                 avatarUrl: null,
-                userid: '第一个人',
-                section: '你好',
-                com: 1
+                nick: '第一个人',
+                isFollow: true,
             },
             {
                 avatarUrl: null,
-                userid: '第二个人',
-                section: '不你很好',
-                com: 1
-            }, 
+                nick: '第二个人',
+                isFollow: false,
+            },
             {
                 avatarUrl: null,
-                userid: '最后一个人最后一个人',
-                section: '好就完事了',
-                com: 1
+                nick: '最后一个人最后一个人',
+                isFollow: false,
             }
         ],
-        isFollow:'关注',
         userInfo: {},
         hasUserInfo: false,
         background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/follow.png",
@@ -77,21 +73,105 @@ Page({
     //         url: '../set/set'
     //     })
     // },
-    goToData: function () {
-        setTimeout(function () {
-            wx.navigateTo({
-                url: '../data/data',
-            })
-        }, 200)
+    goToData: function(e) {
+        let tmplist = this.data.list;
+        let item = tmplist[e.currentTarget.dataset.index]
+        console.log(item.openid);
+        wx.navigateTo({
+            url: '../data/data?openid=' + item.openid,
+        })
     },
+    // following: function(e) {
+    //     let that = this;
+    //     console.log(e);
+    //     let userid = app.globalData.openid;
+    //     if (e.currentTarget.dataset.id !== userid) {
+    //         wx.showModal({
+    //             content: "是否关注此人",
+    //             showCancel: true,
+    //             success: function(res) {
+    //                 if (res.confirm) {
+    //                     wx.request({
+    //                         url: WEB_ROOT + 'attOthers',
+    //                         data: {
+    //                             userid: userid,
+    //                             attid: e.currentTarget.dataset.id,
+    //                         },
+    //                         method: 'POST',
+    //                         header: {
+    //                             'content-type': 'application/x-www-form-urlencoded' // POST默认值
+    //                         },
+    //                         success: function(res) {
+    //                             wx.showToast({
+    //                                 title: '关注成功',
+    //                                 icon: 'succes',
+    //                                 duration: 1800,
+    //                             })
+    //                             that.changeStyle(e);
+    //                         },
+    //                         fail: function(err) {}, //请求失败
+    //                         complete: function() {} //请求完成后执行的函数
+    //                     })
 
-
+    //                 } else if (res.cancel) {
+    //                     console.log('用户点击取消')
+    //                 }
+    //             }
+    //         })
+    //     }
+    // },
+    // unfollowing: function(e) {
+    //     let that = this;
+    //     console.log(e);
+    //     let userid = app.globalData.openid;
+    //     if (e.currentTarget.dataset.id !== userid) {
+    //         wx.showModal({
+    //             content: "确定要取消关注吗",
+    //             showCancel: true,
+    //             success: function(res) {
+    //                 if (res.confirm) {
+    //                     wx.request({
+    //                         url: WEB_ROOT + 'attOthers',
+    //                         data: {
+    //                             userid: userid,
+    //                             attid: e.currentTarget.dataset.id,
+    //                         },
+    //                         method: 'POST',
+    //                         header: {
+    //                             'content-type': 'application/x-www-form-urlencoded' // POST默认值
+    //                         },
+    //                         success: function(res) {
+    //                             wx.showToast({
+    //                                 title: '取消关注成功',
+    //                                 icon: 'succes',
+    //                                 duration: 1800,
+    //                             })
+    //                             that.changeStyle(e);
+    //                         },
+    //                         fail: function(err) {}, //请求失败
+    //                         complete: function() {} //请求完成后执行的函数
+    //                     })
+    //                 } else if (res.cancel) {
+    //                     console.log('用户点击取消')
+    //                 }
+    //             }
+    //         })
+    //     }
+    // },
+    // changeStyle: function(e) {
+    //     console.log(e);
+    //     let tmplist = this.data.list;
+    //     let tmp = tmplist[e.currentTarget.dataset.index].isFollow;
+    //     tmplist[e.currentTarget.dataset.index].isFollow = !tmp;
+    //     this.setData({
+    //         list: tmplist
+    //     });
+    // },
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
         let that = this;
-
         let userid = app.globalData.openid;
         wx.request({
             url: WEB_ROOT + 'getFansMessage', //请求地址
@@ -108,10 +188,10 @@ Page({
                     list: res.data
                 })
             },
-
             fail: function(err) {}, //请求失败
             complete: function() {} //请求完成后执行的函数
         })
+
     }
 
 })

@@ -1,9 +1,10 @@
 /* pages/data/data.wxss */
+
 .container {
     width: 92vw;
     margin-left: 4vw;
     margin-top: 10%;
-    /* background-color: greenyellow; */ 
+    /* background-color: greenyellow; */
 }
 
 .set {
@@ -89,6 +90,38 @@
     border-radius: 14%;
 }
 
+.followIcon1 {
+    position: absolute;
+    top: 150rpx;
+    right: 74rpx;
+    height: 50rpx;
+    width: 140rpx;
+    font-size: 34rpx;
+    padding-bottom: 5rpx;
+    padding-top: 10rpx;
+    text-align: center;
+    border-radius: 18rpx;
+    background-color: rgb(0, 162, 255);
+    color: white;
+}
+
+.followIcon2 {
+    position: absolute;
+    top: 150rpx;
+    right: 74rpx;
+    height: 50rpx;
+    width: 140rpx;
+    font-size: 34rpx;
+    padding-bottom: 5rpx;
+    padding-top: 10rpx;
+    text-align: center;
+    border-radius: 18rpx;
+    background-color: rgb(235, 235, 235);
+    color: rgb(70, 70, 70);
+}
+.followIcon-hover{
+    opacity: 0.8;
+}
 .section {
     width: 90%;
     word-break: break-all;

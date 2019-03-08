@@ -29,19 +29,6 @@
     overflow:hidden;
 }
 
-.followIcon {
-    position: absolute;
-    right: 30rpx;
-    height: 56rpx;
-    width: 110rpx;
-    font-size: 34rpx;
-    padding-bottom: 5rpx;
-    padding-top: 10rpx;
-    text-align: center;       
-    border-radius: 15rpx;
-    background-color: rgb(0, 162, 255);
-    color: white;
-}
 
 .none {
     width: 100%;
