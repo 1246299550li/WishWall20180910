@@ -5,7 +5,7 @@ const app = getApp();
 const WEB_ROOT = app.globalData.WEB_ROOT;
 Page({
 
-  /**
+  /** 
    * 页面的初始数据
    */
   data: {
@@ -57,13 +57,6 @@ Page({
       },
       success: res => {
         //后台返回的日期
-        // console.log("返回的日期" + res.data);
-        // let signDates  = res.data;
-        // let rest = res.data;
-        // let ttt = [1, 2, 3];
-        // let tt = new Date();
-        // let ttt = tt.getDate();
-        // console.log(ttt);
         console.log(res.data);
         let signDates = res.data;
         //当前年月日
@@ -270,5 +263,5 @@ Page({
     wx.switchTab({
       url: '../mine/mine',
     })
-  },
+  }
 })

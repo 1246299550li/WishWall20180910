@@ -11,7 +11,7 @@
   position: absolute;
   top: 5vh;
   left: 5vw;
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 
 .title {

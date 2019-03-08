@@ -1,6 +1,6 @@
 <view class="containers">
   <view class='ret' bindtap="ret">{{ret}}</view>
-  <!--当前日期-->
+  <!--当前日期--> 
   <view class="curdate-block">
     <button bindtap='preMonth'>{{preMonth}}</button>
     <text> {{year}}年{{month}}月</text>

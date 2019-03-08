@@ -1,5 +1,12 @@
 /* pages/data/data.wxss */
 
+.ret {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: 34rpx;
+}
+
 .container {
     width: 92vw;
     margin-left: 4vw;
@@ -119,9 +126,11 @@
     background-color: rgb(235, 235, 235);
     color: rgb(70, 70, 70);
 }
-.followIcon-hover{
+
+.followIcon-hover {
     opacity: 0.8;
 }
+
 .section {
     width: 90%;
     word-break: break-all;

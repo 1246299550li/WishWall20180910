@@ -1,25 +1,39 @@
 /* pages/follow/follow.wxss */
-.back{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+
+.ret {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: 34rpx;
+}
+
+.back {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .scrollbox {
-  margin-left: 6%;
-  width: 90%;
+    margin-left: 6%;
+    width: 90%;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .userinfo {
-    margin-left: 5%;
-    margin-top:5%; 
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    width: 45px;
-    height: 45px;
+    margin: 4%;
+    width: 90rpx;
+    height: 90rpx;
     border-radius: 50%;
-    position: relative;
+}
+
+.nick {
+    color: rgb(73, 73, 73);
+    overflow: hidden;
 }
 
 .none {

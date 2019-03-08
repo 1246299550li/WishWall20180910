@@ -21,6 +21,7 @@ Page({
                 isFollow: false,
             }
         ],
+        ret: "< 返回",
         userInfo: {},
         hasUserInfo: false,
         background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/follow.png",
@@ -78,95 +79,10 @@ Page({
         let item = tmplist[e.currentTarget.dataset.index]
         console.log(item.openid);
         wx.navigateTo({
-            url: '../data/data?openid=' + item.openid,
+            url: '../data/data?openid=' + item.userids,
         })
     },
-    // following: function(e) {
-    //     let that = this;
-    //     console.log(e);
-    //     let userid = app.globalData.openid;
-    //     if (e.currentTarget.dataset.id !== userid) {
-    //         wx.showModal({
-    //             content: "是否关注此人",
-    //             showCancel: true,
-    //             success: function(res) {
-    //                 if (res.confirm) {
-    //                     wx.request({
-    //                         url: WEB_ROOT + 'attOthers',
-    //                         data: {
-    //                             userid: userid,
-    //                             attid: e.currentTarget.dataset.id,
-    //                         },
-    //                         method: 'POST',
-    //                         header: {
-    //                             'content-type': 'application/x-www-form-urlencoded' // POST默认值
-    //                         },
-    //                         success: function(res) {
-    //                             wx.showToast({
-    //                                 title: '关注成功',
-    //                                 icon: 'succes',
-    //                                 duration: 1800,
-    //                             })
-    //                             that.changeStyle(e);
-    //                         },
-    //                         fail: function(err) {}, //请求失败
-    //                         complete: function() {} //请求完成后执行的函数
-    //                     })
 
-    //                 } else if (res.cancel) {
-    //                     console.log('用户点击取消')
-    //                 }
-    //             }
-    //         })
-    //     }
-    // },
-    // unfollowing: function(e) {
-    //     let that = this;
-    //     console.log(e);
-    //     let userid = app.globalData.openid;
-    //     if (e.currentTarget.dataset.id !== userid) {
-    //         wx.showModal({
-    //             content: "确定要取消关注吗",
-    //             showCancel: true,
-    //             success: function(res) {
-    //                 if (res.confirm) {
-    //                     wx.request({
-    //                         url: WEB_ROOT + 'attOthers',
-    //                         data: {
-    //                             userid: userid,
-    //                             attid: e.currentTarget.dataset.id,
-    //                         },
-    //                         method: 'POST',
-    //                         header: {
-    //                             'content-type': 'application/x-www-form-urlencoded' // POST默认值
-    //                         },
-    //                         success: function(res) {
-    //                             wx.showToast({
-    //                                 title: '取消关注成功',
-    //                                 icon: 'succes',
-    //                                 duration: 1800,
-    //                             })
-    //                             that.changeStyle(e);
-    //                         },
-    //                         fail: function(err) {}, //请求失败
-    //                         complete: function() {} //请求完成后执行的函数
-    //                     })
-    //                 } else if (res.cancel) {
-    //                     console.log('用户点击取消')
-    //                 }
-    //             }
-    //         })
-    //     }
-    // },
-    // changeStyle: function(e) {
-    //     console.log(e);
-    //     let tmplist = this.data.list;
-    //     let tmp = tmplist[e.currentTarget.dataset.index].isFollow;
-    //     tmplist[e.currentTarget.dataset.index].isFollow = !tmp;
-    //     this.setData({
-    //         list: tmplist
-    //     });
-    // },
     /**
      * 生命周期函数--监听页面显示
      */
@@ -191,7 +107,8 @@ Page({
             fail: function(err) {}, //请求失败
             complete: function() {} //请求完成后执行的函数
         })
-
+    },
+    ret: function() {
+        wx.navigateBack()
     }
-
 })

@@ -1,26 +1,23 @@
 <!--pages/data/data.wxml-->
 <image src="{{background}}" mode="widthFix" style='position:absolute;z-index:-9;width:100vw; top:0;'></image>
 <view class="container" id='userbox'>
-    <view class="{{isFollow?'followIcon2':'followIcon1'}}" catchtap="{{isFollow?'unfollowing':'following'}}" hover="true" hover-class="followIcon-hover" >{{isFollow?'已关注':'关注'}}</view>
+    <view class='ret' bindtap="ret">{{ret}}</view>
+    <view class="{{isFollow?'followIcon2':'followIcon1'}}" catchtap="{{isFollow?'unfollowing':'following'}}" hover="true" hover-class="followIcon-hover">{{isFollow?'已关注':'关注'}}</view>
     <view class="userinfo">
-        <image class="avatar" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="nickname">{{userInfo.nickName}}</text>
+        <image class="avatar" bindtap="bindViewTap" src="{{userlist[0].avatarUrl}}" mode="cover"></image>
+        <text class="nickname">{{userlist[0].nick}}</text>
         <view class='funcgroup' wx:for="{{userlist}}">
             <view class='func'>
                 <text>收到赞\n{{item.likes}}</text>
             </view>
             <view class='func'>
-                <view hover="true" hover-class="func-hover" style='height:100%' bindtap='goToFans'>
-                    <text>粉丝数\n{{item.fans}}</text>
-                </view>
+                <text>粉丝数\n{{item.fans}}</text>
             </view>
             <view class='func'>
                 <text>积分\n{{item.score}}</text>
             </view>
             <view class='func'>
-                <view hover="true" hover-class="func-hover" style='height:100%' bindtap='goToFollow'>
-                    <text>关注\n{{item.att}}</text>
-                </view>
+                <text>关注\n{{item.att}}</text>
             </view>
         </view>
     </view>

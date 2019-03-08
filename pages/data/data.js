@@ -3,11 +3,9 @@ const WEB_ROOT = app.globalData.WEB_ROOT;
 
 Page({
     data: {
+        ret: "< 返回",
         userlist: [],
         list: [],
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo'),
         openid: null,
         isFollow: false,
         background: "https://langorow-1257044814.cos.ap-guangzhou.myqcloud.com/background/mine.png",
@@ -20,32 +18,6 @@ Page({
             openid: options.openid
         })
         console.log("传值成功")
-        if (app.globalData.userInfo) {
-            this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true
-            })
-        } else if (this.data.canIUse) {
-            // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-            // 所以此处加入 callback 以防止这种情况
-            app.userInfoReadyCallback = res => {
-                this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
-                })
-            }
-        } else {
-            // 在没有 open-type=getUserInfo 版本的兼容处理
-            wx.getUserInfo({
-                success: res => {
-                    app.globalData.userInfo = res.userInfo
-                    this.setData({
-                        userInfo: res.userInfo,
-                        hasUserInfo: true
-                    })
-                }
-            })
-        }
         let that = this;
         //创建节点选择器
         let query = wx.createSelectorQuery();
@@ -121,7 +93,7 @@ Page({
                 }
                 that.setData({
                     userlist: res.data,
-                    isFollow: res.data.ifatt
+                    isFollow: res.data[0].ifatt
                 })
             },
             fail: function(err) {}, //请求失败
@@ -269,6 +241,9 @@ Page({
         that.setData({
             isFollow: !that.data.isFollow
         });
+    },
+    ret: function() {
+        wx.navigateBack()
     },
     onShareAppMessage: function() {
         return {
